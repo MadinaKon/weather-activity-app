@@ -4,6 +4,7 @@ import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
 import List from "./components/List/List";
 import { useEffect, useState } from "react";
+import Toggle from "./components/Toggle/Toggle";
 
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
@@ -11,6 +12,7 @@ function App() {
   });
 
   const [weather, setWeather] = useState("");
+  const [checked, setChecked] = useState(false);
 
   async function fetchWeatherApi() {
     const response = await fetch("https://example-apis.vercel.app/api/weather");
@@ -37,10 +39,15 @@ function App() {
     setActivities(activities.filter((activity) => activity.id !== id));
   }
 
+  function handleThemeSwitch() {
+    setChecked(checked ? !checked : checked);
+  }
+
   return (
     <>
       <h2> Condition {weather.condition}</h2>
       <h3>Temperature {weather.temperature}</h3>
+      <Toggle checked={checked} onChange={handleThemeSwitch} />
       <List
         activities={filteredActivities}
         isGoodWeather={weather.isGoodWeather}
