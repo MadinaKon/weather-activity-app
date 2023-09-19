@@ -39,15 +39,11 @@ function App() {
     setActivities(activities.filter((activity) => activity.id !== id));
   }
 
-  function handleThemeSwitch() {
-    setChecked(checked ? !checked : checked);
-  }
-
   return (
     <>
       <h2> Condition {weather.condition}</h2>
       <h3>Temperature {weather.temperature}</h3>
-      <Toggle checked={checked} onChange={handleThemeSwitch} />
+      <Toggle checked={checked} onChange={setChecked} />
       <List
         activities={filteredActivities}
         isGoodWeather={weather.isGoodWeather}
