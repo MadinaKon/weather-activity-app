@@ -4,12 +4,40 @@ h3 {
 
 .form-input {
   border-radius: 8px;
+  background-color: #9898e4;
+  border: none;
+  height: 80%;
+  width: 60%;
+  padding: 10px;
+}
+
+.form-input:hover {
+  box-shadow: 0px 0px 20px 5px #9898e8;
+}
+
+.form-label {
+  font-weight: bold;
 }
 
 .btn-submit {
   margin: 20px;
+  background-color: #9898e4;
+}
+
+.btn-submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px 5px #00000026;
+}
+
+.form-label {
+  text-align: center;
 }
 
 .form-checkbox {
   border-radius: 8px;
+  margin: 15px;
+}
+
+.activity-form {
+  font-size: 15px;
 }

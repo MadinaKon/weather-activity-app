@@ -3,5 +3,21 @@ ul {
 }
 
 li {
-  background-color: #c9c3c3;
+  background-color: #9898e4;
+  position: relative;
+  text-align: left;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.btn-delete {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #9898e4;
+  height: 45px;
+  width: 50px;
+  text-align: center;
+  font-size: small;
+  font-weight: bold;
 }

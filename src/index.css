@@ -29,7 +29,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #d0d0eb;
+  background-color: #d2d2ec;
 }
 /* 
 h1 {
@@ -43,7 +43,7 @@ h3 {
 }
 
 .weather-condition {
-  font-size: 80px;
+  font-size: 40px;
 }
 
 .weather-temperature {
