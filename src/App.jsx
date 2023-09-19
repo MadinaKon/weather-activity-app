@@ -19,7 +19,11 @@ function App() {
   }
 
   useEffect(() => {
-    fetchWeatherApi();
+    const intervalId = setInterval(fetchWeatherApi, 5000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   function handleAddActivity(newActivity) {
