@@ -3,9 +3,7 @@ import Form from "./components/Form/Form";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
 import List from "./components/List/List";
-import React, { useEffect, useState } from "react";
-
-import { ThemeContext } from "./context/themeContext";
+import { useEffect, useState } from "react";
 import Child from "./components/Child/Child";
 
 function App() {
@@ -14,7 +12,6 @@ function App() {
   });
 
   const [weather, setWeather] = useState("");
-  const { toggle } = React.useContext(ThemeContext);
 
   async function fetchWeatherApi() {
     const response = await fetch("https://example-apis.vercel.app/api/weather");
