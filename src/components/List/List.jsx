@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import "./List.css";
 
 export default function List({ activities, isGoodWeather, onDeleteActivity }) {
   return (
