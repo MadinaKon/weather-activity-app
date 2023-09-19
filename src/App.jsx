@@ -3,7 +3,10 @@ import Form from "./components/Form/Form";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
 import List from "./components/List/List";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import { ThemeContext } from "./context/themeContext";
+import Child from "./components/Child/Child";
 
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
@@ -11,6 +14,7 @@ function App() {
   });
 
   const [weather, setWeather] = useState("");
+  const { toggle } = React.useContext(ThemeContext);
 
   async function fetchWeatherApi() {
     const response = await fetch("https://example-apis.vercel.app/api/weather");
@@ -25,6 +29,8 @@ function App() {
       clearInterval(intervalId);
     };
   }, []);
+
+  useEffect(() => {}, []);
 
   function handleAddActivity(newActivity) {
     setActivities([...activities, { ...newActivity, id: uid() }]);
@@ -41,6 +47,8 @@ function App() {
     <>
       <h2 className="weather-condition">{weather.condition}</h2>
       <h3 className="weather-temperature">{weather.temperature} ℃</h3>
+
+      <Child />
       <List
         activities={filteredActivities}
         isGoodWeather={weather.isGoodWeather}
