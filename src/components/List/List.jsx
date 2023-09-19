@@ -10,10 +10,17 @@ export default function List({ activities, isGoodWeather, onDeleteActivity }) {
       </h2>
       {activities.map((activity) => (
         <Fragment key={activity.id}>
-          <li key={activity.id}>{activity.name}</li>
-          <button type="button" onClick={() => onDeleteActivity(activity.id)}>
-            X
-          </button>
+          <div>
+            <li key={activity.id}>
+              {activity.name}{" "}
+              <button
+                type="button"
+                onClick={() => onDeleteActivity(activity.id)}
+              >
+                X
+              </button>
+            </li>
+          </div>
         </Fragment>
       ))}
     </ul>
