@@ -14,9 +14,15 @@ export default function Form({ onAddActivity }) {
       <h3>Add New Activity:</h3>
       <div className="form-field">
         <label className="form-label" htmlFor="name">
-          Name:
+          Activity:
         </label>
-        <input className="form-input" type="text" id="name" name="name"></input>
+        <input
+          className="form-input"
+          type="text"
+          id="name"
+          name="name"
+          required
+        />
       </div>
       <div>
         <label className="form-label" htmlFor="isForGoodWeather">
@@ -27,7 +33,7 @@ export default function Form({ onAddActivity }) {
           type="checkbox"
           id="isForGoodWeather"
           name="isForGoodWeather"
-        ></input>
+        />
       </div>
 
       <button className="btn-submit" type="submit">

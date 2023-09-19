@@ -37,17 +37,14 @@ h1 {
   line-height: 1.1;
 } */
 
-h2,
-h3 {
-  display: inline-block;
-}
-
 .weather-condition {
   font-size: 40px;
+  display: inline-block;
 }
 
 .weather-temperature {
   font-size: 40px;
+  display: inline-block;
 }
 
 button {

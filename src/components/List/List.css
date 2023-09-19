@@ -14,10 +14,16 @@ li {
   position: absolute;
   right: 0;
   bottom: 0;
-  background-color: #9898e4;
-  height: 45px;
+  background-color: transparent;
+  height: 100%;
   width: 50px;
   text-align: center;
   font-size: small;
   font-weight: bold;
+}
+
+.btn-delete:hover {
+  border: none;
+  transform: rotate(360deg);
+  transition: all 500ms linear;
 }

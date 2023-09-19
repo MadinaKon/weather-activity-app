@@ -27,8 +27,6 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {}, []);
-
   function handleAddActivity(newActivity) {
     setActivities([...activities, { ...newActivity, id: uid() }]);
   }
@@ -43,8 +41,7 @@ function App() {
   return (
     <>
       <h2 className="weather-condition">{weather.condition}</h2>
-      <h3 className="weather-temperature">{weather.temperature} ℃</h3>
-      <br />
+      <h3 className="weather-temperature">{weather.temperature}&deg;C</h3>
       <Child />
       <List
         activities={filteredActivities}

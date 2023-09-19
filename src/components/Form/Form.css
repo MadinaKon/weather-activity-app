@@ -11,10 +11,6 @@ h3 {
   padding: 10px;
 }
 
-.form-input:hover {
-  box-shadow: 0px 0px 20px 5px #9898e8;
-}
-
 .form-label {
   font-weight: bold;
 }
