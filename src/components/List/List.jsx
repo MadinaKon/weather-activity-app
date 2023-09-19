@@ -3,7 +3,7 @@ import "./List.css";
 
 export default function List({ activities, isGoodWeather, onDeleteActivity }) {
   return (
-    <ul>
+    <>
       <h2>
         {isGoodWeather
           ? "The weather is awesome! Go outside and:"
@@ -11,19 +11,20 @@ export default function List({ activities, isGoodWeather, onDeleteActivity }) {
       </h2>
       {activities.map((activity) => (
         <Fragment key={activity.id}>
-          <div>
+          <ul>
             <li key={activity.id}>
               {activity.name}{" "}
               <button
+                className="btn-delete"
                 type="button"
                 onClick={() => onDeleteActivity(activity.id)}
               >
                 X
               </button>
             </li>
-          </div>
+          </ul>
         </Fragment>
       ))}
-    </ul>
+    </>
   );
 }

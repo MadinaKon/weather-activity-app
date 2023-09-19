@@ -47,7 +47,7 @@ function App() {
     <>
       <h2 className="weather-condition">{weather.condition}</h2>
       <h3 className="weather-temperature">{weather.temperature} ℃</h3>
-
+      <br />
       <Child />
       <List
         activities={filteredActivities}
