@@ -34,7 +34,10 @@ function App() {
     <>
       <h2> Condition {weather.condition}</h2>
       <h3>Temperature {weather.temperature}</h3>
-      <List activities={filteredActivities} isGoodWeather={weather} />
+      <List
+        activities={filteredActivities}
+        isGoodWeather={weather.isGoodWeather}
+      />
       <Form onAddActivity={handleAddActivity} />
     </>
   );
