@@ -39,8 +39,8 @@ function App() {
 
   return (
     <>
-      <h2> Condition {weather.condition}</h2>
-      <h3>Temperature {weather.temperature}</h3>
+      <h2 className="weather-condition">{weather.condition}</h2>
+      <h3 className="weather-temperature">{weather.temperature} ℃</h3>
       <List
         activities={filteredActivities}
         isGoodWeather={weather.isGoodWeather}
