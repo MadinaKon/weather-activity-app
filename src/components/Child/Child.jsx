@@ -5,10 +5,10 @@ export default function Child() {
   const { toggle, toggleFunction } = React.useContext(ThemeContext);
   return (
     <div>
-      <button onClick={toggleFunction} className="button-toggle">
+      <button onClick={toggleFunction} className="btn-toggle">
         Change theme
       </button>
-      {toggle ? "🌚" : "🌞"}
+      {toggle}
     </div>
   );
 }
