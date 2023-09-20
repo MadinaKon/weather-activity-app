@@ -62,7 +62,6 @@ function App() {
         </>
       )}
       <Child />
-
       <Form onAddActivity={handleAddActivity} />
     </>
   );
