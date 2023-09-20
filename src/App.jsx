@@ -12,15 +12,24 @@ function App() {
   });
 
   const [weather, setWeather] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   async function fetchWeatherApi() {
-    const response = await fetch("https://example-apis.vercel.app/api/weather");
-    const data = await response.json();
-    setWeather(data);
+    try {
+      const response = await fetch(
+        "https://example-apis.vercel.app/api/weather"
+      );
+      const data = await response.json();
+      setIsLoading(true);
+      setWeather(data);
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+    }
   }
 
   useEffect(() => {
-    const intervalId = setInterval(fetchWeatherApi, 5000);
+    const intervalId = setInterval(fetchWeatherApi, 2000);
 
     return () => {
       clearInterval(intervalId);
@@ -42,13 +51,18 @@ function App() {
     <>
       <Child />
       <h2 className="weather-condition">{weather.condition}</h2>
-      <h3 className="weather-temperature">{weather.temperature}&deg;C</h3>
+      {isLoading && (
+        <>
+          <h3 className="weather-temperature">{weather.temperature}&deg;C</h3>
+          <List
+            activities={filteredActivities}
+            isGoodWeather={weather.isGoodWeather}
+            onDeleteActivity={handleDeleteActivity}
+          />
+        </>
+      )}
       <Child />
-      <List
-        activities={filteredActivities}
-        isGoodWeather={weather.isGoodWeather}
-        onDeleteActivity={handleDeleteActivity}
-      />
+
       <Form onAddActivity={handleAddActivity} />
     </>
   );
