@@ -40,6 +40,7 @@ function App() {
 
   return (
     <>
+      <Child />
       <h2 className="weather-condition">{weather.condition}</h2>
       <h3 className="weather-temperature">{weather.temperature}&deg;C</h3>
       <Child />
